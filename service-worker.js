@@ -1,15 +1,25 @@
-const CACHE_NAME = "firstpwa";
+const CACHE_NAME = "firstpwav3";
 var urlsToCache = [
   "/",
   "/nav.html",
   "/index.html",
-  "/pages/home.html",
-  "/pages/about.html",
-  "/pages/contact.html",
+  "/pages/depan.html",
+  "/pages/tentang.html",
+  "/pages/hanacaraka.html",
+  "/pages/dicoding.html",
   "/css/materialize.min.css",
   "/js/materialize.min.js",
   "/js/nav.js",
-  "/icon.jpg"
+  "/images/icons/icon-72x72.png",
+  "/images/icons/icon-96x96.png",
+  "/images/icons/icon-128x128.png",
+  "/images/icons/icon-144x144.png",
+  "/images/icons/icon-152x152.png",
+  "/images/icons/icon-192x192.png",
+  "/images/icons/icon-384x384.png",
+  "/images/icons/icon-512x512.png",
+  "/images/dicoding.png",
+  "/images/google-developers-atp.png"
 ];
 
 self.addEventListener("install", function(event) {

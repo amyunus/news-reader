@@ -1,14 +1,14 @@
 {
-  "name": "My First PWA",
-  "short_name": "My PWA",
+  "name": "Krama Inggil",
+  "short_name": "Krama Inggil",
   "description": "Aplikasi PWA pertama saya",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#00897B",
-  "theme_color": "#00897B",
+  "background_color": "#96b59a",
+  "theme_color": "#96b59a",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "images/dicoding.png",
       "sizes": "512x512",
       "type": "image/png"
     }
