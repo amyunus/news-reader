@@ -3,6 +3,7 @@ var urlsToCache = [
   "/",
   "/nav.html",
   "/index.html",
+  "/manifest.json",
   "/pages/depan.html",
   "/pages/tentang.html",
   "/pages/hanacaraka.html",
