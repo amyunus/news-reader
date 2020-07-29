@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
   // Activate sidebar nav
+  // const ELEMS;
+  // let ELEMS  = document.querySelectorAll(".sidenav");
+
   var elems = document.querySelectorAll(".sidenav");
   M.Sidenav.init(elems);
   loadNav();

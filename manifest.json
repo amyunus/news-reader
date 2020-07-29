@@ -1,7 +1,7 @@
 {
-  "name": "Krama Inggil",
-  "short_name": "Krama Inggil",
-  "description": "Aplikasi PWA pertama saya",
+  "name": "News Reader",
+  "short_name": "News Reader",
+  "description": "Aplikasi PWA news reader",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#2d3e50",

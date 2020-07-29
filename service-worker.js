@@ -1,8 +1,9 @@
-const CACHE_NAME = "firstpwav4";
+const CACHE_NAME = "news-reader";
 var urlsToCache = [
   "/",
   "/nav.html",
   "/index.html",
+  "/article.html",
   "/manifest.json",
   "/pages/depan.html",
   "/pages/tentang.html",
@@ -11,6 +12,9 @@ var urlsToCache = [
   "/css/materialize.min.css",
   "/js/materialize.min.js",
   "/js/nav.js",
+  "/js/api.js",
+  "/js/getArticles.js",
+  "/js/getArticleByID.js",
   "/images/icons/icon-72x72.png",
   "/images/icons/icon-96x96.png",
   "/images/icons/icon-128x128.png",
@@ -32,24 +36,24 @@ self.addEventListener("install", function(event) {
 });
 
 self.addEventListener("fetch", function(event) {
-  event.respondWith(
-    caches
-      .match(event.request, { cacheName: CACHE_NAME })
-      .then(function(response) {
-        if (response) {
-          console.log("ServiceWorker: Gunakan aset dari cache: ", response.url);
+  var base_url = "https://readerapi.codepolitan.com/";
+  if (event.request.url.indexOf(base_url) > -1) {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return fetch(event.request).then(function(response) {
+          cache.put(event.request.url, response.clone());
           return response;
-        }
-
-        console.log(
-          "ServiceWorker: Memuat aset dari server: ",
-          event.request.url
-        );
-        return fetch(event.request);
+        })
       })
-  );
+    );
+  } else {
+    event.respondWith(
+      caches.match(event.request, { ignoreSearch: true }).then(function(response) {
+        return response || fetch (event.request);
+      })
+    )
+  }
 });
-
 self.addEventListener("activate", function(event) {
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
